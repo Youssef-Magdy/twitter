@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string("tiltle")->nullable();
+            $table->string("title")->nullable();
             $table->string("body");
             $table->integer("parent_id")->nullable()->constrained('posts');
             $table->integer("base_id")->nullable();

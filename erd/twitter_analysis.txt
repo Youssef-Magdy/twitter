@@ -1,4 +1,4 @@
-# Analysis of twitter project:
+Analysis of twitter project:
     1- user can make many posts
     3- user can make many comments on other users posts
     4- user can make many reply on comment on other users posts
@@ -6,7 +6,7 @@
     6- user can make many like on comment on other users posts
     7- user can make many like on reply on other users posts
 
-## Main Entities:
+Main Entities:
     1- user entity:
         1.1- id
         1.2- email
