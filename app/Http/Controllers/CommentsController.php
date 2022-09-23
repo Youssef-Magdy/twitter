@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Posts;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Posts::all();
-        return view('dashboard',['posts'=>$posts]);
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -36,16 +35,16 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        Posts::create($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $comment)
     {
         //
     }
@@ -53,10 +52,10 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -65,10 +64,10 @@ class PostsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -76,10 +75,10 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comment $comment)
     {
         //
     }
