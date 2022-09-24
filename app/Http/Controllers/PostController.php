@@ -17,11 +17,11 @@ class PostController extends Controller
 
         $posts = new Post();
         $comments = $posts->comments();
-        $replies = $comments->replies();
+        // $replies = $comments->replies();
         return view('/posts.index',[
             'posts'=>$posts,
             "comments"=>$comments,
-            "replies" => $replies
+            // "replies" => $replies
         ]);
 
     }
