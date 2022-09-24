@@ -14,8 +14,11 @@ class PostsController extends Controller
      */
     public function index()
     {
+
         $posts = Posts::all();
-        return view('dashboard',['posts'=>$posts]);
+        // return view('dashboard');
+        return view('/posts.index',['posts'=>$posts]);
+
     }
 
     /**
@@ -25,6 +28,10 @@ class PostsController extends Controller
      */
     public function create()
     {
+
+        //
+        return view('/posts.create');
+
 
     }
 
