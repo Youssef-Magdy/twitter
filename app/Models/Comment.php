@@ -9,8 +9,20 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $table = "posts";
+
     protected $fillable = [
         'title',
         'body'
     ];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class,'parent_id','id');
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class,"base_id","parent_id");
+    }
 }

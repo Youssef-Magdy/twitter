@@ -4,7 +4,6 @@
       {{ __('Posts') }}
     </h2>
   </x-slot>
-
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -33,7 +32,6 @@
                     <span class="visually-hidden">unread messages</span>
                   </span>
                 </button>
-
               </div>
               <div class="card-footer bg-transparent border-primary">
                 <div class="form-floating">
@@ -47,10 +45,7 @@
                   </div>
                 </div>
               </div>
-
             </div>
-
-
           </div>
         </div>
       </div>

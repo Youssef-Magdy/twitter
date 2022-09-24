@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
-class LikedPostsController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,16 @@ class LikedPostsController extends Controller
      */
     public function index()
     {
-        //
+
+        $posts = new Post();
+        $comments = $posts->comments();
+        $replies = $comments->replies();
+        return view('/posts.index',[
+            'posts'=>$posts,
+            "comments"=>$comments,
+            "replies" => $replies
+        ]);
+
     }
 
     /**
@@ -23,7 +33,11 @@ class LikedPostsController extends Controller
      */
     public function create()
     {
+
         //
+        return view('/posts.create');
+
+
     }
 
     /**
@@ -34,7 +48,7 @@ class LikedPostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Post::create($request->all());
     }
 
     /**
