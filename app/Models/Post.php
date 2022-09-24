@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Posts extends Model
+class Post extends Model
 {
     use HasFactory;
 
@@ -13,4 +14,9 @@ class Posts extends Model
         'title',
         'body'
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(comment::class,"parent_id","id");
+    }
 }
