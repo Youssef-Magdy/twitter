@@ -15,9 +15,14 @@ class PostController extends Controller
     public function index()
     {
 
-        $posts = Post::all();
-        // return view('dashboard');
-        return view('/posts.index',['posts'=>$posts]);
+        $posts = new Post();
+        $comments = $posts->comments();
+        $replies = $comments->replies();
+        return view('/posts.index',[
+            'posts'=>$posts,
+            "comments"=>$comments,
+            "replies" => $replies
+        ]);
 
     }
 

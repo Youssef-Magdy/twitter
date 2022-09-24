@@ -14,7 +14,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments = new Comment();
+        return $comments->replies();
     }
 
     /**

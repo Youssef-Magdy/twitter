@@ -21,7 +21,7 @@ class Comment extends Model
         return $this->belongsTo(Post::class,'parent_id','id');
     }
 
-    public function replys()
+    public function replies()
     {
         return $this->hasMany(Reply::class,"base_id","parent_id");
     }
