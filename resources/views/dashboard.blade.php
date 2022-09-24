@@ -122,8 +122,4 @@
         </div>
       </div>
     </div>
-    {{ dd($posts) }}
-</x-app-layout>
-
-  </div>
 </x-app-layout>
