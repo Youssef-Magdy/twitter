@@ -10,7 +10,7 @@
         <div class="p-6 bg-white border-b border-gray-200">
           <p class="h1">
             Posts
-            <a href="{{route('posts.create')}}" class="btn btn-primary float-end "> Add </a>
+            <a href="{{route('posts.create')}}" class="btn btn-primary float-end "> add </a>
           </p>
           <div class="continer">
             <div class="card border-primary mb-3">

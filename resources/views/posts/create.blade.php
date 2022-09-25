@@ -15,14 +15,15 @@
                     <div class="continer">
 
                         <form action=" {{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+                         @csrf
                             <div class="row">
                                 <div class="col-12">
                                     <label for="Title" class="mb-2">Title Post</label>
-                                    <input class="form-control" id="Title" name="title" type="text" placeholder="Enter Your Title">
+                                    <input class="form-control" id="Title" name="title" type="text" placeholder="Enter Your Title" value="{{isset($posts) ? $posts->title : ""}}">
                                 </div>
                                 <div class="col-12 mt-3">
                                     <div class="form-floating">
-                                        <textarea name="body" rows="3" id="floatingTextarea" placeholder="Leave a comment here" class="@error('content') is-invalid @enderror form-control"></textarea>
+                                        <textarea name="body" rows="3" id="floatingTextarea" placeholder="Leave a comment here" class="@error('content') is-invalid @enderror form-control" value="{{isset($posts) ? $posts->body : ""}}"></textarea>
                                         <label for="floatingTextarea">Body Post :</label>
                                     </div>
 
@@ -32,10 +33,8 @@
                                     <button type="submit" class="btn btn-primary w-50">Submit</button>
                                 </div>
                             </div>
-
-
-
                         </form>
+                        
                     </div>
                 </div>
             </div>

@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string("title")->nullable();
-            $table->string("body");
-            $table->integer("parent_id")->nullable()->constrained('posts');
+            $table->string('title')->nullable();
+            $table->string('body');
+            $table->integer("parent_id")->nullable()->constrained("posts");
             $table->integer("base_id")->nullable();
-            $table->integer("user_id")->constrained('users');
+            $table->foreignId("user_id")->references('id')->on("users")->CascadeOnDelete();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

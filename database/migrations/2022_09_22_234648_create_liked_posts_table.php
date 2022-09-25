@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('liked_posts', function (Blueprint $table) {
             $table->id();
-            $table->integer("user_id")->constrained('users');
-            $table->integer("post_id")->constrained('posts');
+            $table->foreignId("user_id")->references('id')->on("users")->cascadeOnDelete();
+            $table->foreignId("post_id")->references('id')->on("posts")->CascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -14,16 +14,10 @@ class PostController extends Controller
      */
     public function index()
     {
-
-        $posts = new Post();
-        $comments = $posts->comments();
-        // $replies = $comments->replies();
+        $posts =  Post::all();
         return view('/posts.index',[
-            'posts'=>$posts,
-            "comments"=>$comments,
-            // "replies" => $replies
+            'posts' => $posts
         ]);
-
     }
 
     /**
@@ -48,7 +42,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create($request->all());
+        Post::create([
+            'title'=> $request->title,
+            'body' => $request->body,
+            'user_id' => auth()->id()
+        ]);
+        return redirect(route('posts.index'));
     }
 
     /**

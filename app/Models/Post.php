@@ -6,15 +6,31 @@ use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Builder;
+
 
 class Post extends Model
 {
     use HasFactory;
-
+  
     protected $fillable =[
         'title',
-        'body'
+        'body',
+        'parent_id',
+        'user_id'
     ];
+
+    /**
+     * @param Builder $builder
+     */
+
+
+    public function scopeParent(
+        Builder $builder
+    ):void
+    {
+        $builder->whereNull('parent_id');
+    }
 
     public function comments() : hasMany
     {
@@ -23,6 +39,6 @@ class Post extends Model
 
     public function likes() : hasMany
     {
-        return $this->hasMany(LikedPost::class);
+        return $this->hasOne(LikedPost::class);
     }
 }
