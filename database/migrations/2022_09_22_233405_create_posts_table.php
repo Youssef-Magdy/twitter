@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('body');
+            $table->integer("user_id")->nullable();
             $table->integer("parent_id")->nullable()->constrained("posts");
             $table->integer("base_id")->nullable();
             $table->foreignId("user_id")->references('id')->on("users")->CascadeOnDelete();

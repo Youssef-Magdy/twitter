@@ -16,6 +16,7 @@ class Post extends Model
     protected $fillable =[
         'title',
         'body',
+        'base_id',
         'parent_id',
         'user_id'
     ];
@@ -41,4 +42,10 @@ class Post extends Model
     {
         return $this->hasOne(LikedPost::class);
     }
+
+	public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

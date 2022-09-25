@@ -12,12 +12,16 @@
             Posts
             <a href="{{route('posts.create')}}" class="btn btn-primary float-end "> add </a>
           </p>
+
+          @foreach($posts as $post)
+
+
           <div class="continer">
             <div class="card border-primary mb-3">
-              <div class="card-header bg-transparent border-primary">Added By : {{ Auth::user()->name }}</div>
+              <div class="card-header bg-transparent border-primary">Added By : {{ $post->user->name }}</div>
               <div class="card-body text-success">
-                <h5 class="card-title"> title</h5>
-                <p class="card-text"> Description </p>
+                <h5 class="card-title"> {{ $post->title }}</h5>
+                <p class="card-text"> {{ $post->body }} </p>
 
                 <button type="button" class="btn-o btn-primary position-relative float-end "><span class="h4 text-danger"><i class=" bi bi-chat-heart"></i></span>
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -112,6 +116,8 @@
               </div>
             </div>
           </div>
+          @endforeach
+
         </div>
       </div>
     </div>

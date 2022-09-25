@@ -15,6 +15,7 @@ class UserController
     public function index()
     {
         //
+        return User::find(1)->mypost;
     }
 
     /**

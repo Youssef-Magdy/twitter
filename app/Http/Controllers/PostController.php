@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Observers\PostObserver;
 
 class PostController extends Controller
 {
@@ -45,6 +46,7 @@ class PostController extends Controller
         Post::create([
             'title'=> $request->title,
             'body' => $request->body,
+            'base_id' => $request->base_id,
             'user_id' => auth()->id()
         ]);
         return redirect(route('posts.index'));

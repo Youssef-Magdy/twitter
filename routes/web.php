@@ -25,3 +25,4 @@ Route::get('/dashboard', [PostController::class,'index'])
 Route::resource('/posts' , PostController::class );
 require __DIR__.'/auth.php';
 
+
